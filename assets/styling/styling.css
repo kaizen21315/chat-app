@@ -1,0 +1,341 @@
+/*Start global rules */
+
+:root {
+/* colors */
+  --white:hsl(0, 100%, 100%);
+  --background-color:hsl(270, 20%, 96%);
+  --linear-one-gradient:hsl(264, 100%, 61%);
+  --linear-two-gradient:hsl(293, 100%, 63%);
+  --sub-heading: hsl(276, 100%, 81%); 
+  --chat-on-the-left:hsl(276, 55%, 52%);
+  --chat-on-the-left-background:hsl(275, 46%, 93%);
+  --chat-on-the-right: hsl(270, 7%, 64%);
+  --radio-button-outline:hsl(289, 100%, 72%);
+  --main-heading:hsl(271, 36%, 24%);
+  --phone-shadow: hsl(0deg 0% 72.53);
+
+
+/* font-size */
+  --h2-font-size:12px;
+  --h3-p-font-size :8px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+.rubik {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+  font-size: 16px;
+}
+
+main{
+  margin: 4rem 10vw;
+}
+
+textarea {
+  resize: none;
+}
+
+.gradiant-color{
+background:
+  linear-gradient(to top right, var(--linear-one-gradient) , var(--linear-two-gradient));
+}
+
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  transition: 0.3s ease;
+  color: var(--secondry-color);
+}
+
+input:focus,
+textarea:focus {
+  border-bottom: 2px solid var(--main-color);
+  box-shadow: 0 4px 8px -4px var(--main-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--second-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder,
+input:hover::placeholder,
+textarea:focus::placeholder,
+textarea:hover::placeholder {
+  opacity: 0;
+}
+
+ /* End global rules*/
+
+
+ /* start of phone styling */
+.app{
+  width: 16rem;
+  margin-inline: auto;
+  box-shadow:
+  0 0 0 10px var(--white),
+  0 10px  50px  var(--phone-shadow);
+  border-radius: 1.7rem;
+}
+
+/* start of contact informations */
+
+
+.contact{
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  gap: .6rem;
+  padding: .9rem .4rem 0;
+  border-radius: 1.7rem 1.7rem 5px 5px ;
+}
+
+.app .contact .island{
+  position: absolute;
+  width: 65%;
+  height: 1.3rem;
+  border-radius: 0 0 1.2rem 1.2rem;
+  background-color: var(--white);
+  left: 50%;
+  top: -1px;
+  transform: translateX(-50%);
+}
+
+.app .contact svg{
+  width: 1.2rem;
+  height: 3.5rem;
+}
+
+.app .contact img{
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  box-shadow:  0 0 0 1px var(--background-color);
+}
+
+.app .contact h2{
+  font-size: var(--h2-font-size);
+  font-weight: 400;
+}
+
+.app .contact h3{
+  font-size: var(--h3-p-font-size);
+  font-weight: 400;
+  color: var(--sub-heading);
+}
+
+.app .contact svg:last-of-type{
+  margin-left: 4rem;
+}
+
+/* end of contact informations */
+
+
+/* start of conversation */
+
+.app .conversation {
+  background-color: var(--background-color);
+  padding: .5rem;
+  border-radius: 0 0 1.7rem 1.7rem;
+}
+
+.app .messages  p,
+.app .messages .right p{
+  margin-bottom: .5rem;
+  padding: .6rem;
+  width: 60%;
+  border-radius: 10px;
+  font-size: var(--h3-p-font-size);
+} 
+
+.app .messages > p{
+  font-size: var(--h3-p-font-size);
+  color: var(--chat-on-the-left);
+  background-color: var(--chat-on-the-left-background);
+}
+
+.app .messages .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.app .messages .right .images img{
+  width: 2.8rem;
+  margin-left: .5rem;
+  border-radius: .5rem;
+}
+
+.app .messages .right p{
+  color: var(--chat-on-the-right);
+  background-color: var(--white);
+}
+
+.app .messages .right p:last-of-type{
+  width: fit-content;
+}
+
+/* end of conversation */
+
+/* start of form */
+
+.app form .choices{
+  display: flex;
+  align-items: center;
+  padding: .8rem;
+  margin-bottom: .8rem;
+  width: 70%;
+  color: var(--white);
+  border-radius: 10px 10px 10px 3px;
+  font-size: var(--h3-p-font-size);  
+  position: relative;
+ }
+
+.app form .choices span{
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  position: absolute;
+  right: .8rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.app form .choices input[type="radio"] {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--radio-button-outline);
+  border-radius: 50%;
+  background: transparent; 
+  cursor: pointer;
+  position: relative;
+  margin-right: .5rem;
+}
+
+.app form  textarea ,
+.app form  button{
+  background-color: transparent;
+  border: 0;
+}
+
+.app form .message{
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  border-radius: 3rem;
+}
+
+.app form  button svg{
+  width: 2rem;
+}
+
+.app form textarea{
+  width: 90%;
+}
+
+.app form textarea {
+padding-top: 17px;
+}
+
+.app form .choices input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--radio-button-outline);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app form .message button svg:hover path{
+  fill: var(--main-heading);
+  cursor: pointer;
+}
+
+/* end of form */
+ /* end of phone styling */
+
+ /* start of main heading */
+
+.main-text{
+  text-align: center;
+  margin-block: 5rem;
+}
+
+.main-text h1{
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--main-heading);
+  margin-bottom: 1.5rem;
+}
+
+.main-text p{
+  color: var(--chat-on-the-right);
+  line-height: 1.5;
+  font-size: 14px;
+  width: 17rem;
+  margin-inline: auto;
+}
+
+  /* end of main heading */
+
+ /*startof breakpoints */
+
+
+
+
+
+/* ≥ 1536px */
+@media (min-width: 1536px) {
+}
+
+
+/* ≥ 1280px */
+@media (min-width: 1280px) {
+}
+
+
+
+/* ≥ 1024px */
+@media (min-width: 1024px) {
+}
+
+
+/*  768px */
+@media (min-width: 768px) {
+}
+
+
+/*  640px  */
+@media (min-width: 640px) {
+}
